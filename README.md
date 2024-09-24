@@ -134,6 +134,7 @@ COPY . /usr/share/nginx/html
 time docker build --no-cache -t my-nginx-1 -f Dockerfile .
 ```
 ![image](https://github.com/user-attachments/assets/ce8abc5f-7c5c-4a04-ab40-c2d40ff7c750)
+![image](https://github.com/user-attachments/assets/a18bf4d1-4334-442f-9fbb-d3c64666926c)
 
 
 
@@ -150,7 +151,10 @@ COPY . /usr/share/nginx/html
 time docker build --no-cache -t my-nginx-2 -f Dockerfile .
 ```
 ![image](https://github.com/user-attachments/assets/3880d71c-896f-4590-bacd-d0979ef512c6)
+![image](https://github.com/user-attachments/assets/922b90f2-4878-4e0c-bd28-88ae6efe89d8)
 
+
+size와 빌드 속도 모두 alpine 버전이 우세하다.
 
 
 
