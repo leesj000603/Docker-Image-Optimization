@@ -116,6 +116,45 @@ rm -rf /var/lib/apt/lists/*
 ### 15. 🧊 Docker Squash 사용
    - Docker Squash를 사용하여 레이어를 병합함으로써 Docker이미지의 크기를 줄일 수 있다.
      - 그러나 빌드 시간이 증가하고 캐시 가능성이 감소할 수 있으므로 주의가 필요하다.
-        
+
+
+## 실습
+
+### 1. 기본이미지 비교 실습
+**- stable버전 이미지**
+```
+# nginx:stable 사용
+FROM nginx:stable
+
+COPY . /usr/share/nginx/html
+```
+
+```
+#캐시의 변수를 제외하고 단순 빌드 속도를 측정하기 위한 명령
+time docker build --no-cache -t my-nginx-1 -f Dockerfile .
+```
+![image](https://github.com/user-attachments/assets/ce8abc5f-7c5c-4a04-ab40-c2d40ff7c750)
+
+
+
+**- alpine버전 이미지**
+```
+# nginx:alpine 사용
+FROM nginx:alpine
+
+COPY . /usr/share/nginx/html
+```
+
+
+```
+time docker build --no-cache -t my-nginx-2 -f Dockerfile .
+```
+![image](https://github.com/user-attachments/assets/3880d71c-896f-4590-bacd-d0979ef512c6)
+
+
+
+
+### 2. 멀티스테이지 빌드 실습
+
        
 
